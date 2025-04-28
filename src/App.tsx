@@ -4,7 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import StepCard from './components/StepCard';
 import { steps } from './data/steps';
-
+import About from './components/About';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -27,6 +28,15 @@ function App() {
             ))}
           </div>
         </main>
+        <About />
+        <Footer />
+        {/* <div className="text-center mt-4">
+          <button onClick={() => setCount((count) => count + 1)}>
+            count is {count}
+          </button>
+          <p>
+            Edit <code>src/App.tsx</code> and save to test HMR
+          </p>
 
         {/* Later we'll add the About & Footer sections here */}
       </div>
