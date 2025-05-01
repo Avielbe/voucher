@@ -2,7 +2,12 @@
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx,js,jsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+          sans:    ['"Varela Round"', 'ui-sans-serif', 'system-ui'],
+          display: ['"Amatic SC"', 'cursive']
+        }
+    },
   },
   plugins: [],
 }

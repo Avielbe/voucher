@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "voucher-99b54"
-  }
+  },
+  "targets": {
+    "voucher-99b54": {
+      "hosting": {
+        "voucher-site": [
+          "voucher-99b54"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

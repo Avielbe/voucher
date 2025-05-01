@@ -1,15 +1,30 @@
 {
   "hosting": {
+    "site": "voucher-99b54",
     "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
+    "predeploy": [
+      "npm run build"
+    ],
     "rewrites": [
       {
         "source": "**",
         "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=0,no-cache,no-store,must-revalidate"
+          }
+        ]
       }
     ]
   }

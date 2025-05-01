@@ -1,13 +1,13 @@
 
 // src/components/Footer.tsx
 import React from 'react';
-import DesignShowcaseTest from './DesignShowcase'; // Assuming this is the new design showcase component';
+// import DesignShowcaseTest from './DesignShowcase'; 
 
 const Footer: React.FC = () => (
   <footer className="bg-blue-800 py-12 text-white">
     <div className="container mx-auto px-4 text-center">
       {/* כאן מציגים זמנית את רכיב העיצוב החדש */}
-      <DesignShowcaseTest />
+      {/* <DesignShowcaseTest /> */}
 
       <p className="mt-8">© {new Date().getFullYear()} Aviel BE. כל הזכויות שמורות.</p>
     </div>
