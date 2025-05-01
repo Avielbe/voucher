@@ -190,7 +190,10 @@ function App() {
   // }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-purple-50 to-white text-right" dir="rtl">
+    <div className="min-h-screen bg-gray-900 text-right" dir="rtl">
+          {/* <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-purple-50 to-white text-right" dir="rtl"> */}
+          <div className="max-w-5xl mx-auto bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden">
+
       {/* Hero Section with Aurora effect */}
       <header className="relative py-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 opacity-90 z-0"></div>
@@ -247,7 +250,7 @@ function App() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-white/90 mt-4 text-xl"
+            className="text-white/90 mt-4 text-xl font-display"
           >
             שלושה שלבים פשוטים לניצול ההטבה המגיעה לך
           </motion.p>
@@ -345,6 +348,7 @@ function App() {
       </motion.div>
 
       <Footer />
+      </div>
     </div>
   );
 }
