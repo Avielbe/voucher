@@ -15,5 +15,10 @@ export const faqItems: FAQItem[] = [
         id: 2,
         question: "שאלה 2",
         answer: "תשובה 2"
+    },
+    {
+        id: 2,
+        question: "שאלה 2",
+        answer: "תשובה 2"
     }
 ];
