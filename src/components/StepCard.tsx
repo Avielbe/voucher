@@ -27,14 +27,14 @@ const StepCard: React.FC<StepCardProps> = ({ step }) => {
     };
 
     return (
-        <motion.div 
+        <motion.div
             className="relative h-full rounded-3xl overflow-hidden group"
             onHoverStart={() => setIsHovered(true)}
             onHoverEnd={() => setIsHovered(false)}
         >
             {/* Aurora Glow Background Effect */}
             <div className="absolute -inset-1 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-3xl opacity-70 blur-lg group-hover:opacity-100 transition duration-300"></div>
-            
+
             {/* Card Content */}
             <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden h-full flex flex-col">
                 {/* Step Number (Centered above icon) */}
@@ -43,12 +43,12 @@ const StepCard: React.FC<StepCardProps> = ({ step }) => {
                         {step.id}
                     </div>
                 </div>
-                
+
                 {/* Icon Container */}
                 <div className="pt-16 pb-6 px-6 flex items-center justify-center">
-                    <motion.div 
+                    <motion.div
                         className="w-20 h-20 text-blue-600"
-                        animate={isHovered ? { 
+                        animate={isHovered ? {
                             scale: [1, 1.1, 1],
                             rotate: [0, 5, -5, 0],
                             transition: { duration: 0.5 }
@@ -79,7 +79,7 @@ const StepCard: React.FC<StepCardProps> = ({ step }) => {
                         }}
                     >
                         <div className="flex items-center justify-center">
-                            {open ? "הסתר פרטים" : "הצג פרטים נוספים"}
+                            {open ? "הסתר" : "הסבר מורחב"}
                             <motion.svg
                                 className="w-5 h-5 mr-2"
                                 fill="none"
@@ -102,7 +102,7 @@ const StepCard: React.FC<StepCardProps> = ({ step }) => {
                                 transition={{ duration: 0.4, ease: "easeInOut" }}
                                 className="overflow-hidden"
                             >
-                                <div className="mt-6 text-gray-700 border-t border-gray-100 pt-6 text-sm">
+                                <div className="mt-6 text-gray-700 border-t border-gray-100 pt-6 text-sm whitespace-pre-line space-y-3 text-right">
                                     <p className="leading-relaxed">{step.details}</p>
 
                                     {step.link && step.link.length > 0 && (

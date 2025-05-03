@@ -1,57 +1,72 @@
 // // src/data/steps.ts
-
-// /**
-//  * Step describes each of the three main voucher steps.
-//  * In JS you'd omit the interface and just use plain objects.
-//  */
 // export interface Step {
 //     id: number;
 //     title: string;
 //     shortDesc: string;
-//     /**
-//      * details shown when you click “More info”
-//      * JS: you could omit the `?` and allow undefined anyway.
-//      */
 //     details?: string;
-//     /**
-//      * optional link for extra resources (e.g. Telegram, Google Doc)
-//      */
-//     link?: string;
+//     link?: {
+//         url: string;
+//         text: string;
+//     }[];
+//     icon: string;
 // }
 
 // export const steps: Step[] = [
 //     {
 //         id: 1,
-//         title: "Issue Your Voucher",
-//         shortDesc: "Who’s eligible & how to apply in a click.",
+//         title: "הנפקת שובר",
+//         shortDesc: "אם קבלתם סמס עם זכאות לשובר תיכנסו לקישור שמופיע שם, ואם לא תיכנסו לקישור הזה",
 //         details:
-//             "You qualify if you served at least 90 days... click here for the Ministry’s full guide.",
-//         link: "https://example.com/issuing-guide",
+//             "אם קבלתם סמס עם זכאות לשובר תיכנסו לקישור שמופיע שם, ואם לא״ תיכנסו לקישור הזה: www.linkvoucher.co.il ותעקבו אחרי הפעולות. למי שרוצה יש מדריך של חברת cal שמסביר צעד אחרי צעד מה לעשות. בסוף התהליך אתם תכניסו ל Google Wallet or to the Apple Pay שלכם כרטיס אשראי צהוב. שאיתו תשלמו לבית העסק. מזל טוב עברתם את השלב המסובך, ועכשיו עוברים לשלב הכיפי...",
+//         link: [
+//             {
+//                 url: "https://www.linkvoucher.co.il",
+//                 text: "קישור להנפקת שובר"
+//             },
+//             {
+//                 url: "https://example.com/cal-guide",
+//                 text: "מדריך CAL המלא"
+//             }
+//         ],
+//         icon: "VoucherIcon",
 //     },
 //     {
 //         id: 2,
-//         title: "Find a Participating Business",
-//         shortDesc: "Tips, Telegram groups, and our curated Google Doc list.",
+//         title: "בחירת מלון או צימר למימוש השובר",
+//         shortDesc: "עכשיו, עליכם לבחור מקום בו תוכלו לממש את השובר",
 //         details:
-//             "Join the ‘Reserve Voucher Deals’ Telegram group and check out our live-updated sheet.",
-//         link: "https://docs.google.com/spreadsheet/…",
+//             "עכשיו, עליכם לבחור מקום בו תוכלו לממש את השובר. שימו לב, למרות שהשובר נראה כמו אשראי הוא יעבוד לכם רק בעסקים שנחשבים לינה לפי סליקת האשראי ובישראל. (בוקינג או airbnb לא יעבוד באמצעות השובר. גם מורים פרטיים להיסטוריה שתורמים להירדמות לא נכללים בשובר...) כל בעל עסק יידע להגיד לכם טלפונית איך הוא מוגדר, אז אם אתם לא יודעים שווה להתקשר או לשלוח מייל.",
+//         link: [
+//             {
+//                 url: "https://docs.google.com/spreadsheets/...",
+//                 text: "גוגל דוקס עם מידע מפורט"
+//             },
+//             {
+//                 url: "https://example.com/link2",
+//                 text: "לינק נוסף"
+//             },
+//             {
+//                 url: "https://example.com/link3",
+//                 text: "לינק שלישי"
+//             }
+//         ],
+//         icon: "HotelIcon",
 //     },
 //     {
 //         id: 3,
-//         title: "Redeem at the Business",
-//         shortDesc: "Google Wallet, Apple Pay, or physical card options.",
+//         title: "מימוש השובר בחופשה",
+//         shortDesc: "שמגיעים לבית העסק יש לציין שאתם רוצים להשתמש בשובר החופשה של המילואים",
 //         details:
-//             "Tap “Pay” in Wallet or show your card code. No smartphone? Request a printed voucher at the front desk.",
+//             "שמגיעים לבית העסק יש לציין שאתם רוצים הלשתמש בשובר החופשה של המילואים, הם יבקשו ממכם תעודת זהות ואשראי נוסף לביטחון. לאחר מכן תוכלו לסלוק בעזרת אפליקצית ה apple pay / google wallet שלכם ואחר שהעסקה תאושר תוכלו לראות תמונה עם סכום התשלום ובית העסק שבו בוצע התשלום. תהנו!",
+//         icon: "PaymentIcon",
 //     },
 // ];
-
-
 // src/data/steps.ts
 export interface Step {
     id: number;
     title: string;
     shortDesc: string;
-    details?: string;
+    details: string;
     link?: {
         url: string;
         text: string;
@@ -63,49 +78,57 @@ export const steps: Step[] = [
     {
         id: 1,
         title: "הנפקת שובר",
-        shortDesc: "אם קבלתם סמס עם זכאות לשובר תיכנסו לקישור שמופיע שם, ואם לא תיכנסו לקישור הזה",
-        details:
-            "אם קבלתם סמס עם זכאות לשובר תיכנסו לקישור שמופיע שם, ואם לא תיכנסו לקישור הזה: www.linkvoucher.co.il ותעקבו אחרי הפעולות. למי שרוצה יש מדריך של חברת cal שמסביר צעד אחרי צעד מה לעשות. בסוף התהליך אתם תכניסו ל Google Wallet or to the Apple Pay שלכם כרטיס אשראי צהוב. שאיתו תשלמו לבית העסק. מזל טוב עברתם את השלב המסובך, ועכשיו עוברים לשלב הכיפי...",
+        shortDesc: "הנפקה של השובר וחיבורו לארנק הדיגיטלי",
+        details: `1. נכנסים להודעת SMS עם קישור להנפקת השובר. אם עוד לא קיבלתם ‑ נסו להנפיק ידנית מהקישור למטה.
+  2. לאחר שסיימתם את שלבי ההנפקה קיבלתם כרטיס אשראי דיגיטלי צהוב של חברת כאל.
+  3. כעת עליכם להוסיף אותו לארנק הדיגיטלי של המכשיר (Android → Google Wallet, iPhone → Apple Pay).
+  4. אם אתם מתקשים ‑ עקבו אחרי המדריך בקישור למטה.
+  5. מזל טוב! עברתם את החלק המסובך, עכשיו מתחיל החלק הכיפי.`,
         link: [
             {
-                url: "https://www.linkvoucher.co.il",
-                text: "קישור להנפקת שובר"
+                url: "https://s.cal-platform.com/MyNofesh",
+                text: "קישור להנפקת שובר",
             },
             {
-                url: "https://example.com/cal-guide",
-                text: "מדריך CAL המלא"
-            }
+                url:
+                    "https://api.miluim.idf.il/api/v1/Media/1fjajdtx/%D7%9E%D7%93%D7%A8%D7%99%D7%9A-%D7%94%D7%9E%D7%A9%D7%AA%D7%9E%D7%A9-%D7%A9%D7%9C-cal.pdf",
+                text: "מדריך מפורט",
+            },
         ],
         icon: "VoucherIcon",
     },
     {
         id: 2,
-        title: "בחירת מלון או צימר למימוש השובר",
-        shortDesc: "עכשיו, עליכם לבחור מקום בו תוכלו לממש את השובר",
-        details:
-            "עכשיו, עליכם לבחור מקום בו תוכלו לממש את השובר. שימו לב, למרות שהשובר נראה כמו אשראי הוא יעבוד לכם רק בעסקים שנחשבים לינה לפי סליקת האשראי ובישראל. (בוקינג או airbnb לא יעבוד באמצעות השובר. גם מורים פרטיים להיסטוריה שתורמים להירדמות לא נכללים בשובר...) כל בעל עסק יידע להגיד לכם טלפונית איך הוא מוגדר, אז אם אתם לא יודעים שווה להתקשר או לשלוח מייל.",
-        link: [
-            {
-                url: "https://docs.google.com/spreadsheets/...",
-                text: "גוגל דוקס עם מידע מפורט"
-            },
-            {
-                url: "https://example.com/link2",
-                text: "לינק נוסף"
-            },
-            {
-                url: "https://example.com/link3",
-                text: "לינק שלישי"
-            }
-        ],
-        icon: "HotelIcon",
-    },
+        title: "בחירת נופש",
+        shortDesc:
+            "בחירת מלון, צימר או כל מקום אחר שעומד בקריטריונים למימוש השובר",
+        details: `1. השובר נראה כמו אשראי דיגיטלי רגיל, אך יעבוד רק בעסקים המסווגים כלינה בישראל.    (למשל Booking או Airbnb לא יעבדו, וגם לא שיעור היסטוריה פרטי…).
+  2. כל בעל עסק יכול לומר לכם איך הוא מוגדר; אם לא בטוחים ‑ התקשרו או שלחו מייל.
+  3. לנוחיותכם מצורפים מקורות עם רשימות עסקים. אפשר לממש בכל עסק אחר שעומד בקריטריונים‑לשיקולכם.
+  4. שימו לב: יש עסקים שמציעים הנחות/תוספות מיוחדות עבור תשלום בשובר מילואים.
+  5. לא חייבים לממש את כל הסכום בפעם אחת!`,
+      link: [
+          {
+              url:
+                  "https://docs.google.com/spreadsheets/d/11jAygCf9VSJKNNSiWpnnkzoCwAZFT-n-09jgyDLOIuM/edit?gid=0#gid=0",
+                    text: "קובץ דוקס עם רשימה מפורטת של מקומות",
+            }, 
+        {
+      url: "https://t.me/miluim_vacation",
+        text: "קבוצת טלגרם ייעודית למקומות עם הטבות למימוש השובר",
+    }, 
+],
+      icon: "HotelIcon",
+    }, 
     {
-        id: 3,
-        title: "מימוש השובר בחופשה",
-        shortDesc: "שמגיעים לבית העסק יש לציין שאתם רוצים להשתמש בשובר החופשה של המילואים",
-        details:
-            "שמגיעים לבית העסק יש לציין שאתם רוצים הלשתמש בשובר החופשה של המילואים, הם יבקשו ממכם תעודת זהות ואשראי נוסף לביטחון. לאחר מכן תוכלו לסלוק בעזרת אפליקצית ה apple pay / google wallet שלכם ואחר שהעסקה תאושר תוכלו לראות תמונה עם סכום התשלום ובית העסק שבו בוצע התשלום. תהנו!",
+  id: 3,
+    title: "תשלום עם השובר",
+        shortDesc: "תשלום בבית העסק באמצעות השובר שבארנק הדיגיטלי",
+          details: `1. בנוסף לתשלום בשובר בדרך כלל יבקשו תעודת זהות, וייתכן ויבקשו אשראי רגיל לביטחון
+2. לרוב המכשירים יש שבב NFC, המאפשר תשלום באמצעות הצמדה(שימו לב שבארנק הדיגיטלי מופיע השובר)
+3. מכשירים ללא NFC: הורידו את אפליקציית CAL, הזינו פרטים והקלידו מספר כרטיס ידנית.
+4. בעלי מכשירים כשרים יקבלו כרטיס פיזי לתיבת הדואר כשבועיים לאחר ההנפקה.
+5. תהנו בנופש 😊`,
         icon: "PaymentIcon",
     },
-];
+  ];

@@ -70,7 +70,7 @@ const FAQ: React.FC = () => {
     return (
         <section className="mt-16 mb-12">
             <div className="text-center mb-12">
-                <motion.h2 
+                <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
@@ -79,7 +79,7 @@ const FAQ: React.FC = () => {
                 >
                     שאלות ותשובות
                 </motion.h2>
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, amount: 0.5 }}
@@ -89,7 +89,7 @@ const FAQ: React.FC = () => {
             </div>
 
             <div className="max-w-3xl mx-auto">
-                <motion.div 
+                <motion.div
                     className="relative bg-white/70 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -97,12 +97,12 @@ const FAQ: React.FC = () => {
                     transition={{ duration: 0.6 }}
                 >
                     {/* Background glow effect */}
-                    <div className="absolute -inset-1 bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 rounded-3xl opacity-50 blur-xl"></div>
-                    
-                    <div className="relative bg-white/95 backdrop-blur-md rounded-3xl overflow-hidden">
+                    <div className="absolute -inset-1 z-0  bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 rounded-3xl opacity-50 blur-xl"></div>
+
+                    <div className="relative z-10 bg-white/95 backdrop-blur-md rounded-3xl overflow-hidden">
                         {faqItems.map((item, index) => (
-                            <motion.div 
-                                key={item.id} 
+                            <motion.div
+                                key={item.id}
                                 className={`border-b border-gray-100 last:border-b-0`}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -113,25 +113,30 @@ const FAQ: React.FC = () => {
                             >
                                 <button
                                     onClick={() => toggleItem(item.id)}
-                                    className={`w-full px-6 py-5 text-right flex justify-between items-center focus:outline-none transition-colors duration-300 ${
-                                        hoveredItem === item.id ? 'bg-blue-50/80' : ''
-                                    }`}
+                                    // className={`w-full px-6 py-5 text-right flex justify-between items-center focus:outline-none transition-colors duration-300 ${
+                                    //     hoveredItem === item.id ? 'bg-blue-50/80' : ''
+                                    // }`}
+                                    className={`w-full px-6 py-5 text-right flex justify-between items-center focus:outline-none transition-colors duration-300
+                                            ${openItem === item.id
+                                            ? 'bg-slate-50'                /* פתוח – רקע אפרפר‑בהיר */
+                                            : hoveredItem === item.id
+                                                ? 'bg-blue-50/60'            /* Hover – רמז כחול עדין */
+                                                : 'bg-white/90'}             /* סגור – לבן‑זכוכיתי */
+                                        `}
                                 >
-                                    <span className={`font-medium text-lg transition-colors duration-300 ${
-                                        openItem === item.id 
-                                            ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600' 
+                                    <span className={`font-medium text-lg transition-colors duration-300 ${openItem === item.id
+                                            ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600'
                                             : 'text-gray-800'
-                                    }`}>
+                                        }`}>
                                         {item.question}
                                     </span>
                                     <motion.div
                                         animate={{ rotate: openItem === item.id ? 180 : 0 }}
                                         transition={{ duration: 0.3 }}
-                                        className={`w-8 h-8 flex items-center justify-center rounded-full transition-colors duration-300 ${
-                                            openItem === item.id 
-                                                ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white' 
+                                        className={`w-8 h-8 flex items-center justify-center rounded-full transition-colors duration-300 ${openItem === item.id
+                                                ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white'
                                                 : 'bg-gray-100 text-gray-500'
-                                        }`}
+                                            }`}
                                     >
                                         <svg
                                             className="w-5 h-5"

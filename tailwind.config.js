@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-          sans:    ['"Varela Round"', 'ui-sans-serif', 'system-ui'],
+        sans: ['"Varela Round"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
           display: ['"Amatic SC"', 'cursive']
         }
     },
