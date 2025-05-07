@@ -166,11 +166,11 @@ const About: React.FC = () => {
         />
 
         <motion.p
-          className="text-gray-700 mb-8 leading-relaxed max-w-xl mx-auto"
+          className="text-gray-700 mb-8 whitespace-pre-line leading-relaxed max-w-xl mx-auto"
           variants={itemVariants}
         >
-          האתר פותח בשביל להקל על אנשי המילואים להשתמש בשובר הנופש. 
-          אני אביאל בן-אליהו , מפתח תוכנה ומליאומניק ביחידה לוחמת. מביא איתי ניסיון בתחום ה Fullstack וה- Mobile, ומחפש את האתגר הבא. אשמח לשמור על קשר:
+          {`האתר פותח בשביל להקל על אנשי המילואים להשתמש בשובר הנופש. 
+שמי אביאל בן-אליהו, מפתח תוכנה ומילואימניק ביחידה לוחמת. מביא איתי ניסיון בתחום ה‑Fullstack וה‑Mobile, ומחפש את האתגר הבא. אשמח לשמור על קשר:`}
         </motion.p>
 
         <motion.div

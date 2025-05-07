@@ -9,7 +9,7 @@ const Footer: React.FC = () => (
       {/* כאן מציגים זמנית את רכיב העיצוב החדש */}
       {/* <DesignShowcaseTest /> */}
 
-      <p className="mt-8">© {new Date().getFullYear()} Aviel BE. כל הזכויות שמורות.</p>
+      <p className="mt-8">© {new Date().getFullYear()} Aviel Ben-Eliyahu. כל הזכויות שמורות.</p>
     </div>
   </footer>
 );
